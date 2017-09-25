@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB3A75C81F77800A00697DA5 /* TripsVeritcalLineDecoratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3A75C71F77800A00697DA5 /* TripsVeritcalLineDecoratorView.swift */; };
+		DB3A75CA1F77838B00697DA5 /* TripsDotDecoratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3A75C91F77838B00697DA5 /* TripsDotDecoratorView.swift */; };
+		DB3A75CC1F77864E00697DA5 /* TripsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3A75CB1F77864E00697DA5 /* TripsCollectionViewLayout.swift */; };
+		DB6C5FE81F7788D700F1D376 /* TripsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C5FE71F7788D700F1D376 /* TripsCollectionViewCell.swift */; };
+		DB6C5FEA1F778FA900F1D376 /* TripsCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C5FE91F778FA900F1D376 /* TripsCollectionHeaderView.swift */; };
+		DB6C5FEC1F77A30C00F1D376 /* TripsDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C5FEB1F77A30C00F1D376 /* TripsDataLoader.swift */; };
 		DBECDEDF1F6B9C5F00014906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECDEDE1F6B9C5F00014906 /* AppDelegate.swift */; };
 		DBECDEE11F6B9C5F00014906 /* ExploreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECDEE01F6B9C5F00014906 /* ExploreTableViewController.swift */; };
-		DBECDEE31F6B9C5F00014906 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECDEE21F6B9C5F00014906 /* SecondViewController.swift */; };
+		DBECDEE31F6B9C5F00014906 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECDEE21F6B9C5F00014906 /* TripsViewController.swift */; };
 		DBECDEE61F6B9C5F00014906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBECDEE41F6B9C5F00014906 /* Main.storyboard */; };
 		DBECDEE81F6B9C5F00014906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBECDEE71F6B9C5F00014906 /* Assets.xcassets */; };
 		DBECDEEB1F6B9C5F00014906 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBECDEE91F6B9C5F00014906 /* LaunchScreen.storyboard */; };
@@ -25,10 +31,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB3A75C71F77800A00697DA5 /* TripsVeritcalLineDecoratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsVeritcalLineDecoratorView.swift; sourceTree = "<group>"; };
+		DB3A75C91F77838B00697DA5 /* TripsDotDecoratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDotDecoratorView.swift; sourceTree = "<group>"; };
+		DB3A75CB1F77864E00697DA5 /* TripsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		DB6C5FE71F7788D700F1D376 /* TripsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsCollectionViewCell.swift; sourceTree = "<group>"; };
+		DB6C5FE91F778FA900F1D376 /* TripsCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsCollectionHeaderView.swift; sourceTree = "<group>"; };
+		DB6C5FEB1F77A30C00F1D376 /* TripsDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDataLoader.swift; sourceTree = "<group>"; };
 		DBECDEDB1F6B9C5F00014906 /* TabXP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabXP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBECDEDE1F6B9C5F00014906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBECDEE01F6B9C5F00014906 /* ExploreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewController.swift; sourceTree = "<group>"; };
-		DBECDEE21F6B9C5F00014906 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		DBECDEE21F6B9C5F00014906 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		DBECDEE51F6B9C5F00014906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBECDEE71F6B9C5F00014906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBECDEEA1F6B9C5F00014906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +67,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB6C5FED1F78A51D00F1D376 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				DBECDEE21F6B9C5F00014906 /* TripsViewController.swift */,
+				DB6C5FEB1F77A30C00F1D376 /* TripsDataLoader.swift */,
+				DB6C5FE71F7788D700F1D376 /* TripsCollectionViewCell.swift */,
+				DB6C5FE91F778FA900F1D376 /* TripsCollectionHeaderView.swift */,
+				DB3A75C71F77800A00697DA5 /* TripsVeritcalLineDecoratorView.swift */,
+				DB3A75C91F77838B00697DA5 /* TripsDotDecoratorView.swift */,
+				DB3A75CB1F77864E00697DA5 /* TripsCollectionViewLayout.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
 		DBECDED21F6B9C5F00014906 = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +107,7 @@
 				DBECDEF21F6BBB2100014906 /* ExploreTableViewCell.swift */,
 				DBECDF001F6C883500014906 /* ExploreCollectionViewCell.swift */,
 				DBECDEF41F6BBB8100014906 /* ExploreTableViewSectionHeaderView.swift */,
-				DBECDEE21F6B9C5F00014906 /* SecondViewController.swift */,
+				DB6C5FED1F78A51D00F1D376 /* Trips */,
 				DBECDEE41F6B9C5F00014906 /* Main.storyboard */,
 				DBECDEE71F6B9C5F00014906 /* Assets.xcassets */,
 				DBECDEE91F6B9C5F00014906 /* LaunchScreen.storyboard */,
@@ -167,14 +193,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBECDEE31F6B9C5F00014906 /* SecondViewController.swift in Sources */,
+				DBECDEE31F6B9C5F00014906 /* TripsViewController.swift in Sources */,
+				DB6C5FE81F7788D700F1D376 /* TripsCollectionViewCell.swift in Sources */,
 				DBECDEDF1F6B9C5F00014906 /* AppDelegate.swift in Sources */,
 				DBECDEFF1F6C6B9E00014906 /* ExploreTableViewDataLoader.swift in Sources */,
+				DB3A75C81F77800A00697DA5 /* TripsVeritcalLineDecoratorView.swift in Sources */,
 				DBECDEE11F6B9C5F00014906 /* ExploreTableViewController.swift in Sources */,
+				DB6C5FEA1F778FA900F1D376 /* TripsCollectionHeaderView.swift in Sources */,
 				DBECDEF31F6BBB2100014906 /* ExploreTableViewCell.swift in Sources */,
 				DBECDEF91F6C4BFD00014906 /* BaseService.swift in Sources */,
+				DB3A75CA1F77838B00697DA5 /* TripsDotDecoratorView.swift in Sources */,
 				DBECDEF71F6C4BCD00014906 /* ExperiencesService.swift in Sources */,
+				DB6C5FEC1F77A30C00F1D376 /* TripsDataLoader.swift in Sources */,
 				DBECDF011F6C883500014906 /* ExploreCollectionViewCell.swift in Sources */,
+				DB3A75CC1F77864E00697DA5 /* TripsCollectionViewLayout.swift in Sources */,
 				DBECDEFB1F6C655100014906 /* Experience.swift in Sources */,
 				DBECDEF51F6BBB8100014906 /* ExploreTableViewSectionHeaderView.swift in Sources */,
 				DBECDF031F6C90ED00014906 /* ExploreTableHeaderView.swift in Sources */,
@@ -342,6 +374,7 @@
 				DBECDEF11F6B9C5F00014906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -18,7 +18,8 @@ typealias BaseCompletionHandler = (_ isSuccess: Bool, _ json: Any?, _ error: Err
 
 class BaseService {
     
-    static let APIBaseHost = "https://jsonplaceholder.typicode.com"
+    //static let APIBaseHost = "https://jsonplaceholder.typicode.com"
+    static let APIBaseHost = "https://demo3748745.mockable.io"
     var dataTask: URLSessionDataTask?
     
     func requestJSON(_ endpoint: String, completionHandler: @escaping BaseCompletionHandler) {
@@ -42,11 +43,13 @@ class BaseService {
             }
             
             do {
-                let result = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject]
-                completionHandler(true, result, nil)
+                let result = try JSONSerialization.jsonObject(with: responseData, options: [.allowFragments]) as? [String: AnyObject]
+                let actualResult = result?["results"]
                 
-            } catch  {
-                completionHandler(false, nil, NSError(domain: "com.array.tabxp.JSONConversionError", code: 12, userInfo: nil))
+                completionHandler(true, actualResult, nil)
+                
+            } catch let e {
+                completionHandler(false, nil, e as NSError)
                 return
             }
         }

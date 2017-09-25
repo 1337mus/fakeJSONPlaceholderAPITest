@@ -33,6 +33,7 @@ class ExploreTableViewCell: UITableViewCell {
         }
     }
 }
+
 struct ExploreCellViewModel {
     let experiences: [Experience]
 }

@@ -12,18 +12,20 @@ typealias ExperiencesServiceCompletionHandler = (ServiceResult<[Experience]>) ->
 
 class ExperiencesService: BaseService {
     
-    static let endpoint = "/photos/1"
+    static let endpoint = "/photos"
     
     func run(parameters: String = "", completionHandler: @escaping ExperiencesServiceCompletionHandler) {
         let params = ExperiencesService.endpoint + parameters // URL Encoded
         
         requestJSON(params) { isSuccess, response, error in
-            guard isSuccess, error == nil, let result = response as? [String: AnyObject] else {
+            guard isSuccess, error == nil, let results = response as? [[String: AnyObject]] else {
                 completionHandler(ServiceResult<[Experience]>(object: nil, error: error))
                 return
             }
             
-            let experiences: [Experience] = [Experience.fromJSON(json: result)!, Experience.fromJSON(json: result)!, Experience.fromJSON(json: result)!, Experience.fromJSON(json: result)!, Experience.fromJSON(json: result)!]
+            //let experiences: [Experience] = [Experience.fromJSON(json: result)!, Experience.fromJSON(json: result)!, Experience.fromJSON(json: result)!, Experience.fromJSON(json: result)!, Experience.fromJSON(json: result)!]
+            
+            let experiences = results.flatMap { Experience.fromJSON(json: $0) }
             
             completionHandler(ServiceResult<[Experience]>(object: experiences, error: nil))
         }
