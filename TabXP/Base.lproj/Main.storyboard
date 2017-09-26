@@ -43,6 +43,7 @@
                     <connections>
                         <segue destination="8O3-Jj-Jjc" kind="relationship" relationship="viewControllers" id="naj-qC-Q1X"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="2cW-yG-c9s" kind="relationship" relationship="viewControllers" id="tm8-8V-lnc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -273,6 +274,36 @@ cook in a luxury haussment</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vl-cI-LQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="741.60000000000002" y="-349.47526236881561"/>
+        </scene>
+        <!--Search Results Table View Controller-->
+        <scene sceneID="wa0-ud-Hq3">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchResultsTableViewController" id="2cW-yG-c9s" userLabel="Search Results Table View Controller" customClass="SearchResultsTableViewController" customModule="TabXP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eqt-lx-oCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="2cW-yG-c9s" id="sHH-dV-KXR"/>
+                            <outlet property="delegate" destination="2cW-yG-c9s" id="whA-TW-8FM"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Search" id="Nwj-vg-WjL"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="TA7-3D-WvC" id="bl9-FW-YBX"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ziU-hU-k6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="TA7-3D-WvC">
+                    <connections>
+                        <outlet property="delegate" destination="2cW-yG-c9s" id="NgM-vC-lUr"/>
+                        <outlet property="searchContentsController" destination="2cW-yG-c9s" id="yRr-Og-mvl"/>
+                        <outlet property="searchResultsDataSource" destination="2cW-yG-c9s" id="C99-bq-FwZ"/>
+                        <outlet property="searchResultsDelegate" destination="2cW-yG-c9s" id="Pnz-Pv-MON"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-1" y="871"/>
         </scene>
     </scenes>
     <resources>

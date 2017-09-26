@@ -32,7 +32,7 @@ class TripsCollectionViewLayout: UICollectionViewLayout {
     
     override init() {
         super.init()
-        //self.register(TripsVeritcalLineDecoratorView.self, forDecorationViewOfKind: TripsVeritcalLineDecoratorView.reusableViewIdentifier)
+        self.register(TripsVeritcalLineDecoratorView.self, forDecorationViewOfKind: TripsVeritcalLineDecoratorView.reusableViewIdentifier)
         self.register(TripsDotDecoratorView.self, forDecorationViewOfKind: TripsDotDecoratorView.reusableViewIdentifier)
     }
     
@@ -64,21 +64,21 @@ class TripsCollectionViewLayout: UICollectionViewLayout {
             let dotViewAttr = UICollectionViewLayoutAttributes(forDecorationViewOfKind: TripsDotDecoratorView.reusableViewIdentifier, with: indexPath)
             let cellAttr = UICollectionViewLayoutAttributes(forCellWith: indexPath)
 
-            verticalLineAttr.frame = CGRect(x: cellHorizontalMargin, y: maxDecoratorY, width: TripsCollectionViewLayout.verticalLineWidth, height: TripsCollectionViewLayout.cellHeight + (i == 0 ? cellVerticalMargin : 0))
+            verticalLineAttr.frame = CGRect(x: cellHorizontalMargin, y: maxDecoratorY, width: TripsCollectionViewLayout.verticalLineWidth, height: TripsCollectionViewLayout.cellHeight + cellVerticalMargin + (i == 0 ? cellVerticalMargin : 0))
             
             
             let cellWidth = collectionView.frame.width - 3 * cellVerticalMargin - verticalLineAttr.frame.width
             
             cellAttr.frame = CGRect(x: verticalLineAttr.frame.maxX + cellHorizontalMargin, y: maxCellY, width: cellWidth, height: TripsCollectionViewLayout.cellHeight)
             
-            dotViewAttr.frame = CGRect(x: cellHorizontalMargin, y: maxCellY + dotViewMargin + TripsCollectionViewCell.titleLabelHeight, width: dotViewWidth, height: dotViewHeight)
+            dotViewAttr.frame = CGRect(x: cellHorizontalMargin - dotViewWidth / 2 + 1, y: maxCellY + dotViewMargin + TripsCollectionViewCell.titleLabelHeight, width: dotViewWidth, height: dotViewHeight)
             dotViewAttr.zIndex = 1
             
-            maxCellY = cellAttr.frame.maxY + cellHorizontalMargin
+            maxCellY = cellAttr.frame.maxY + cellVerticalMargin
             maxDecoratorY = maxCellY
             
             cellAttributes.append(cellAttr)
-            //verticalLineDecoratorViewAttributes.append(verticalLineAttr)
+            verticalLineDecoratorViewAttributes.append(verticalLineAttr)
             dotDecoratorViewAttributes.append(dotViewAttr)
         }
     }
@@ -89,7 +89,7 @@ class TripsCollectionViewLayout: UICollectionViewLayout {
     }
     
     override var collectionViewContentSize: CGSize {
-        guard let last = dotDecoratorViewAttributes.last, let view = collectionView else { return .zero }
+        guard let last = cellAttributes.last, let view = collectionView else { return .zero }
         //let dotViewAttr =  dotDecoratorViewAttributes.last
         //+ 0.5 * dotViewAttr.frame.width
         return CGSize(width: view.frame.width - 2 * TripsCollectionViewLayout.cellVerticalMargin , height: last.frame.maxY)
@@ -130,8 +130,8 @@ class TripsCollectionViewLayout: UICollectionViewLayout {
     override func layoutAttributesForDecorationView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if elementKind == String(describing: TripsDotDecoratorView.self) {
             return dotDecoratorViewAttributes[indexPath.item]
-        } else {
-            return verticalLineDecoratorViewAttributes[indexPath.item]
         }
+        
+        return verticalLineDecoratorViewAttributes[indexPath.item]
     }
 }

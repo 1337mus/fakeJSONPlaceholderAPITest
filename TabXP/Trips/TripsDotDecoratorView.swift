@@ -13,7 +13,7 @@ class TripsDotDecoratorView: UICollectionReusableView {
     
     let dotView = UIView()
     
-    static let reusableViewIdentifier = String(describing: TripsVeritcalLineDecoratorView.self)
+    static let reusableViewIdentifier = String(describing: TripsDotDecoratorView.self)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

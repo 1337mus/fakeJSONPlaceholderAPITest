@@ -35,7 +35,7 @@ class TripsViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.register(TripsCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: TripsCollectionViewCell.self))
-        //collectionView.register(TripsCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: String(describing: TripsCollectionHeaderView.self))
+        collectionView.register(TripsCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: String(describing: TripsCollectionHeaderView.self))
     }
     
     override func viewDidLoad() {
