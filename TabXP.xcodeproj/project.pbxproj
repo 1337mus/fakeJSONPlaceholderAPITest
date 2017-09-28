@@ -17,6 +17,7 @@
 		DB6C5FE81F7788D700F1D376 /* TripsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C5FE71F7788D700F1D376 /* TripsCollectionViewCell.swift */; };
 		DB6C5FEA1F778FA900F1D376 /* TripsCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C5FE91F778FA900F1D376 /* TripsCollectionHeaderView.swift */; };
 		DB6C5FEC1F77A30C00F1D376 /* TripsDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C5FEB1F77A30C00F1D376 /* TripsDataLoader.swift */; };
+		DBE5E82C1F7DB4FE00398794 /* SearchResultsDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE5E82B1F7DB4FE00398794 /* SearchResultsDataLoader.swift */; };
 		DBECDEDF1F6B9C5F00014906 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECDEDE1F6B9C5F00014906 /* AppDelegate.swift */; };
 		DBECDEE11F6B9C5F00014906 /* ExploreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECDEE01F6B9C5F00014906 /* ExploreTableViewController.swift */; };
 		DBECDEE31F6B9C5F00014906 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBECDEE21F6B9C5F00014906 /* TripsViewController.swift */; };
@@ -45,6 +46,7 @@
 		DB6C5FE71F7788D700F1D376 /* TripsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB6C5FE91F778FA900F1D376 /* TripsCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsCollectionHeaderView.swift; sourceTree = "<group>"; };
 		DB6C5FEB1F77A30C00F1D376 /* TripsDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDataLoader.swift; sourceTree = "<group>"; };
+		DBE5E82B1F7DB4FE00398794 /* SearchResultsDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsDataLoader.swift; sourceTree = "<group>"; };
 		DBECDEDB1F6B9C5F00014906 /* TabXP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabXP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBECDEDE1F6B9C5F00014906 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBECDEE01F6B9C5F00014906 /* ExploreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTableViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				DB4A9C661F79F9E9002B308C /* SearchResultsCollectionViewCell.swift */,
 				DB4A9C641F79F979002B308C /* SearchResultsCollectionViewLayout.swift */,
 				DB4A9C681F7A0227002B308C /* SearchResultsTableViewController.swift */,
+				DBE5E82B1F7DB4FE00398794 /* SearchResultsDataLoader.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				DB4A9C651F79F979002B308C /* SearchResultsCollectionViewLayout.swift in Sources */,
 				DBECDEF31F6BBB2100014906 /* ExploreTableViewCell.swift in Sources */,
 				DBECDEF91F6C4BFD00014906 /* BaseService.swift in Sources */,
+				DBE5E82C1F7DB4FE00398794 /* SearchResultsDataLoader.swift in Sources */,
 				DB4A9C631F79F884002B308C /* SearchResultsTableViewCell.swift in Sources */,
 				DB4A9C691F7A0227002B308C /* SearchResultsTableViewController.swift in Sources */,
 				DB3A75CA1F77838B00697DA5 /* TripsDotDecoratorView.swift in Sources */,

@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
-    let dataLoader = ExploreTableViewDataLoader()
+    let dataLoader = SearchResultsDataLoader()
     let searchController = UISearchController(searchResultsController: nil)
     var filteredExperiences = [Experience]()
+    var dataModel = SearchResultsDataModel(experiences: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +33,18 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        dataLoader.reloadData { [weak self] success in
-            guard let strongSelf = self, success else { return }
+        dataLoader.reloadData { [weak self] dataModel in
+            guard let strongSelf = self, let model = dataModel  else { return }
+            strongSelf.dataModel = model
             
-            strongSelf.tableView.reloadData()
+            DispatchQueue.main.async {
+                strongSelf.tableView.reloadData()
+            }
         }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return isFiltering ? 1 : dataModel.sectionCount
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +54,7 @@ class SearchResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchResultsTableViewCell.self), for: indexPath) as? SearchResultsTableViewCell {
-             cell.experiences = isFiltering ? filteredExperiences : dataLoader.exploreCellViewModel?.experiences ?? []
+             cell.experiences = isFiltering ? filteredExperiences : dataModel.item(at: indexPath) ?? []
             return cell
         }
         
@@ -60,6 +64,19 @@ class SearchResultsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard !isFiltering else { return nil }
+        
+        let letter = dataModel.sectionTitle(at: section)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        label.font = UIFont.systemFont(ofSize: 18)
+        
+        label.text = letter
+        
+        return label
+    }
 }
 
 extension SearchResultsTableViewController: UISearchResultsUpdating {
@@ -67,7 +84,7 @@ extension SearchResultsTableViewController: UISearchResultsUpdating {
         let searchText = searchController.searchBar.text ?? ""
         
         if isFiltering {
-            filteredExperiences = dataLoader.exploreCellViewModel?.experiences.filter {
+            filteredExperiences = dataModel.allExperiences()?.filter {
                 return $0.title.lowercased().range(of: searchText.lowercased()) != nil
             } ?? []
         }
@@ -77,5 +94,18 @@ extension SearchResultsTableViewController: UISearchResultsUpdating {
     
     var isFiltering: Bool {
         return searchController.isActive && !(searchController.searchBar.text?.isEmpty ?? true)
+    }
+}
+
+extension String {
+    subscript(i: Int) -> String {
+        return String(self[index(startIndex, offsetBy: i)])
+    }
+    
+    subscript(range: Range<Int>) -> String {
+        let l = index(startIndex, offsetBy: range.lowerBound)
+        let r = index(startIndex, offsetBy: range.upperBound)
+        
+        return self[l..<r]
     }
 }
